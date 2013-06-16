@@ -1,5 +1,3 @@
-//      Datawrapper
-(function(){
 
     // Initial Setup
     // -------------
@@ -43,6 +41,3 @@
 
     });
 
-
-
-}).call(this);

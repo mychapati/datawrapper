@@ -1,4 +1,3 @@
-(function(){
 
     // Datawrapper.Dataset
     // -------------------
@@ -432,4 +431,3 @@
         }
     });
 
-}).call(this);

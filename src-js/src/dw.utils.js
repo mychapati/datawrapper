@@ -1,5 +1,3 @@
-// Datawrapper
-(function(){
 
     // Require Underscore, if we're on the server, and it's not already present.
     var root = this;
@@ -341,5 +339,3 @@
         window.DW = new Datawrapper.Utils();
     });
 
-
-}).call(this);

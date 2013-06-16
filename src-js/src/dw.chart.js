@@ -1,4 +1,3 @@
-(function(){
 
     // Datawrapper.Chart
     // -----------------
@@ -198,4 +197,3 @@
 
     });
 
-}).call(this);

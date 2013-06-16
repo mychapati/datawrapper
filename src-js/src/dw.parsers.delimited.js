@@ -1,4 +1,3 @@
-(function(){
 
       // Datawrapper.Parsers.Delimited
       // -----------------------------
@@ -231,5 +230,3 @@
 
    });
 
-
-}(this, _));

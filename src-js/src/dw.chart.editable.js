@@ -1,4 +1,3 @@
-(function(){
 
     // Datawrapper.EditableChart
     // -------------------------
@@ -143,4 +142,3 @@
         }
     });
 
-}).call(this);

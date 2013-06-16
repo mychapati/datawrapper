@@ -1,4 +1,3 @@
-(function(){
 
     // Datawrapper.Visualization.Base
     // ------------------------------
@@ -100,4 +99,3 @@
 
     Datawrapper.Visualizations.Base = Base.prototype;
 
-}).call(this);
