@@ -1,14 +1,19 @@
 #!/bin/sh
 # read version from package.json
 VERSION=$(python -c 'import json;print json.loads(open("../package.json").read())["version"]')
+
 # remove old javascript
-rm ../www/static/js/datawrapper*.js
+rm ../www/static/js/dw.*.js
+
 # generate javascript to be included on datawrapper
-cat dw.core.js dw.dataset.js dw.utils.js dw.chart.js dw.chart.editable.js dw.theme.js dw.parsers.delimited.js dw.visualization.js > tmp.js
-uglifyjs tmp.js > ../www/static/js/datawrapper-backend-$VERSION.min.js
+OUT=dw.backend-$VERSION.min.js
+cat src/dw.start.js src/dw.core.js src/dw.utils.js src/dw.chart.js src/dw.chart.editable.js src/dw.theme.js src/dw.parsers.delimited.js src/dw.visualization.js src/dw.dataset.js src/dw.column.js src/dw.column.types.js src/dw.end.js > dw.js
+uglifyjs dw.js > ../www/static/js/$OUT
+
 # generate js that's packed with each chart
-cat dw.core.js dw.dataset.js dw.chart.js dw.theme.js dw.parsers.delimited.js dw.visualization.js > tmp.js
-uglifyjs tmp.js > ../www/static/js/datawrapper.min.js
+OUT=dw.min.js
+cat src/dw.start.js src/dw.core.js src/dw.dataset.js src/dw.column.js src/dw.column.types.js src/dw.chart.js src/dw.theme.js src/dw.parsers.delimited.js src/dw.visualization.js src/dw.end.js > tmp.js
+uglifyjs tmp.js > ../www/static/js/dw.min.js
 rm tmp.js
 
 # if coffeescript is installed, generate javascript for user's administration
