@@ -2,6 +2,8 @@
       // Datawrapper.Parsers.Delimited
       // -----------------------------
 
+   Datawrapper.Parsers = {};
+
    /**
     * Smart delimited data parser.
     * - Handles CSV and other delimited data.

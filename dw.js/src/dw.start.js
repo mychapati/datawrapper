@@ -1,4 +1,4 @@
 
-var dw = {};
+var dw = {}, Datawrapper = {};
 
 (function(){
