@@ -49,12 +49,12 @@
     };
 
     $(function() {
-        var chart = DW.currentChart = new Datawrapper.EditableChart(JSON.parse('{{ chart.toJSON|raw }}'));
+        var chart = dw.backend.currentChart = new Datawrapper.EditableChart(JSON.parse('{{ chart.toJSON|raw }}'));
 
         chart.setLocale('{{ chartLocale }}', {{ metricPrefix | json | raw }});
 
         if (chart.get('lastEditStep') < {{ createstep }}) {
-            DW.__firstTime = true;
+            dw.backend.__firstTime = true;
             chart.set('lastEditStep', {{ createstep }});
         }
 

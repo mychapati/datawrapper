@@ -1,12 +1,13 @@
 {% block messages %}
 <script type="text/javascript">
 
-    Datawrapper.Messages = {};
+    dw.backend.messages = {
 
-    Datawrapper.Messages.provideCurPwd = '{% trans %}For security reasons, please provide your current password.{% endtrans %}';
+        provideCurPwd: '{% trans %}For security reasons, please provide your current password.{% endtrans %}',
+        pwdTooShort: '{% trans %}Your password doesn\'t meet our security guidelines. Please provide at least 4 characters.{% endtrans %}',
+        pwdMismatch: '{% trans %}The password and the repeated password must not differ.{% endtrans %}'
 
-    Datawrapper.Messages.pwdTooShort = '{% trans %}Your password doesn\'t meet our security guidelines. Please provide at least 4 characters.{% endtrans %}';
-    Datawrapper.Messages.pwdMismatch = '{% trans %}The password and the repeated password must not differ.{% endtrans %}';
+    };
 
 </script>
 {% endblock %}

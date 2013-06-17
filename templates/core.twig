@@ -34,7 +34,9 @@
     <script type="text/javascript" src="/static/vendor/cryptojs/hmac-sha256.js"></script>
     <script type="text/javascript" src="/static/vendor/globalize/globalize.js"></script>
     <script type="text/javascript" src="/static/vendor/globalize/cultures/globalize.culture.{{ locale | replace({'_':'-'}) }}.js"></script>
-    <script type="text/javascript" src="/static/js/dw.backend-{{ DW_VERSION }}.min.js"></script>
+    <script type="text/javascript" src="/static/js/dw.js?v={{ DW_VERSION }}"></script>
+    <script type="text/javascript" src="/static/js/datawrapper-backend.js?v={{ DW_VERSION }}"></script>
+    
 
     {% for js in plugin_js %}
     <script type="text/javascript" src="/static/plugins/{{ js }}"></script>
@@ -127,9 +129,8 @@
     <script type="text/javascript">
 
 $(function() {
-  Datawrapper.Core.initialize();
-  DW.__chartCacheDomain = '{{ DW_CHART_CACHE_DOMAIN }}';
-  DW.__domain = '{{ DW_DOMAIN }}';
+  dw.backend.__chartCacheDomain = '{{ DW_CHART_CACHE_DOMAIN }}';
+  dw.backend.__domain = '{{ DW_DOMAIN }}';
 });
     </script>
     {% use "messages.twig" %}

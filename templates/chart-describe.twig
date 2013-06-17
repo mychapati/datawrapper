@@ -32,7 +32,7 @@ table.htCore tr td {
 <script type="text/javascript">
 $(function() {
 
-    var chart = DW.currentChart;
+    var chart = dw.backend.currentChart;
 
     chart.onChange(reload);
 
@@ -75,7 +75,7 @@ $(function() {
 
     // update data table after format changes
     $('.number-format').change(function() {
-        updateTable(DW.dataset, chart);
+        updateTable(dw.backend.dataset, chart);
     });
 
     function updateTable(dataset, chart) {
@@ -199,7 +199,7 @@ $(function() {
                 }
                 chart.sync('#has-vertical-headers', 'metadata.data.vertical-header');
             }
-            DW.dataset = ds;
+            dw.backend.dataset = ds;
             updateTable(ds, chart);
         });
     }
